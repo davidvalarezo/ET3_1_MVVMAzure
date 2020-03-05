@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ET3_1_MVVMAzure.View.PaginaDetalle">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0">
+        </OnPlatform>
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <ScrollView Padding="10">
+            <StackLayout Spacing="10">
+                <Image Source="{Binding Avatar}" HeightRequest="200" WidthRequest="200"/>
+                <Entry Text="{Binding Title, Mode=OneWay}"  TextColor="Purple" x:Name="TituloEditable"/>
+                <Label Text="{Binding Title}" TextColor="Purple"/>
+                <Label Text="{Binding Descriptio}"/>
+                <Button Text="Habla" x:Name="BotonHablar" Clicked="BotonHablar_Clicked"/>
+                <Button Text="Ir a web" x:Name="BotonWeb" Clicked="BotonWebr_Clicked"/>
+                <Button Text="Guardar" x:Name="BotonGuardar" Clicked="BotonGuardar_Clicked"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

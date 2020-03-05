@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ET3_1_MVVMAzure.View.ListadoPagina">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0">
+        </OnPlatform>
+    </ContentPage.Padding>
+    <StackLayout Spacing="0">
+        <Image x:Name="BannerComun" Source="BannerXam.jpg"/>
+        <Button Text="Sincroniza Lista" Command="{Binding RecuperaListado}"></Button>
+
+        <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
+        
+        
+    <ListView x:Name="ListadoView" ItemsSource="{Binding ListaPersonal}" ItemSelected="ListadoView_ItemSelected">
+        <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ContentView Padding=" 5">
+                        <Frame OutlineColor="Accent"  Padding="5">
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding Avatar}" WidthRequest="50" HeightRequest="50"/>
+                                <StackLayout>
+                                    <Label Text="{Binding Name}" FontSize="22" VerticalOptions="StartAndExpand"/>
+                                    <Label Text="{Binding Title}" FontSize="16" VerticalOptions="CenterAndExpand"/>
+                                    <Label Text="{Binding Website}" FontSize="10" VerticalOptions="EndAndExpand"/>
+                                </StackLayout>
+                            </StackLayout>
+                            
+                        </Frame>
+                    </ContentView>
+                    <!--<ImageCell Text="{Binding Name}"
+                Detail="{Binding Title}" 
+                ImageSource="{Binding Avatar}" />-->
+                </DataTemplate>
+            </ListView.ItemTemplate>
+    </ListView>
+    </StackLayout>
+</ContentPage>

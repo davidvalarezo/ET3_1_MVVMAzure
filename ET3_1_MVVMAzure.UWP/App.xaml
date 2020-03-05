@@ -1,0 +1,8 @@
+﻿<Application
+    x:Class="ET3_1_MVVMAzure.UWP.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ET3_1_MVVMAzure.UWP"
+    RequestedTheme="Light">
+
+</Application>
